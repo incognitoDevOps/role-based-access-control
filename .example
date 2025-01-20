@@ -1,5 +1,5 @@
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017
 DB_NAME=rbac_tutorial
-SESSION_SECRET=some super secret
+SESSION_SECRET=some hkngbn8tr7yh4wfvjbs6rt47erdfyg8uigfdegrtbje6543
 ADMIN_EMAIL=admin@gmail.com
