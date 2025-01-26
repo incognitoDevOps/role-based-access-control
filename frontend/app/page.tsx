@@ -1,10 +1,11 @@
 "use client";
 
 import * as React from "react";
-import Box from "@mui/system/Box";
-import Grid from "@mui/system/Grid";
-import styled from "@mui/system/styled";
+import Box from "@mui/material/Box"; // Change from @mui/system to @mui/material
+import Grid from "@mui/material/Grid"; // Change from @mui/system to @mui/material
+import styled from "@mui/system/styled"; // Keep styled as is
 
+// Styled component remains the same
 const Item = styled("div")(({ theme }) => ({
   backgroundColor: "#fff",
   border: "1px solid",
@@ -23,105 +24,103 @@ export default function Home() {
     <div>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
-          <Grid size={8}>
-            <Item>size=8</Item>
+          <Grid item xs={8}> {/* Change `size` to `item xs={8}` */}
+            <Item>xs=8</Item>
           </Grid>
-          <Grid size={4}>
-            <Item>size=4</Item>
+          <Grid item xs={4}> {/* Change `size` to `item xs={4}` */}
+            <Item>xs=4</Item>
           </Grid>
-          <Grid size={4}>
-            <Item>size=4</Item>
+          <Grid item xs={4}> {/* Change `size` to `item xs={4}` */}
+            <Item>xs=4</Item>
           </Grid>
-          <Grid size={8}>
-            <Item>size=8</Item>
+          <Grid item xs={8}> {/* Change `size` to `item xs={8}` */}
+            <Item>xs=8</Item>
           </Grid>
         </Grid>
       </Box>
 
       <Grid container spacing={2}>
-        <Grid size={{ xs: 6, md: 8 }}>
+        <Grid item xs={6} md={8}> {/* Change `size` to `item xs={6} md={8}` */}
           <Item>xs=6 md=8</Item>
         </Grid>
-        <Grid size={{ xs: 6, md: 4 }}>
+        <Grid item xs={6} md={4}> {/* Change `size` to `item xs={6} md={4}` */}
           <Item>xs=6 md=4</Item>
         </Grid>
-        <Grid size={{ xs: 6, md: 4 }}>
+        <Grid item xs={6} md={4}> {/* Change `size` to `item xs={6} md={4}` */}
           <Item>xs=6 md=4</Item>
         </Grid>
-        <Grid size={{ xs: 6, md: 8 }}>
+        <Grid item xs={6} md={8}> {/* Change `size` to `item xs={6} md={8}` */}
           <Item>xs=6 md=8</Item>
         </Grid>
       </Grid>
 
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid size={6}>
+        <Grid item xs={6}> {/* Change `size` to `item xs={6}` */}
           <Item>1</Item>
         </Grid>
-        <Grid size={6}>
+        <Grid item xs={6}> {/* Change `size` to `item xs={6}` */}
           <Item>2</Item>
         </Grid>
-        <Grid size={6}>
+        <Grid item xs={6}> {/* Change `size` to `item xs={6}` */}
           <Item>3</Item>
         </Grid>
-        <Grid size={6}>
+        <Grid item xs={6}> {/* Change `size` to `item xs={6}` */}
           <Item>4</Item>
         </Grid>
       </Grid>
 
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
-      >
+      <Grid container spacing={3}>
         {Array.from(Array(6)).map((_, index) => (
-          <Grid key={index} size={{ xs: 2, sm: 4 }}>
+          <Grid item xs={2} sm={4} key={index}> {/* Change `size` to `item xs={2} sm={4}` */}
             <Item>{index + 1}</Item>
           </Grid>
         ))}
       </Grid>
 
       <Grid container spacing={3}>
-        <Grid size="grow">
+        <Grid item sx={{ flexGrow: 1 }}> {/* Correct `size="grow"` */}
           <Item>size=grow</Item>
         </Grid>
-        <Grid size={6}>
+        <Grid item xs={6}>
           <Item>size=6</Item>
         </Grid>
-        <Grid size="grow">
+        <Grid item sx={{ flexGrow: 1 }}>
           <Item>size=grow</Item>
         </Grid>
       </Grid>
+
       <Grid container spacing={3}>
-        <Grid size="auto">
+        <Grid item xs="auto"> {/* Correct `size="auto"` */}
           <Item>size=auto</Item>
         </Grid>
-        <Grid size={6}>
+        <Grid item xs={6}>
           <Item>size=6</Item>
         </Grid>
-        <Grid size="grow">
+        <Grid item sx={{ flexGrow: 1 }}>
           <Item>size=grow</Item>
         </Grid>
       </Grid>
+
       <Grid container spacing={2} columns={16}>
-        <Grid size={8}>
+        <Grid item xs={8}> {/* Correct `size` to `item xs={8}` */}
           <Item>size=8</Item>
         </Grid>
-        <Grid size={8}>
+        <Grid item xs={8}> {/* Correct `size` to `item xs={8}` */}
           <Item>size=8</Item>
         </Grid>
       </Grid>
 
       <Grid container spacing={3} sx={{ flexGrow: 1 }}>
-        <Grid size={{ xs: 6, md: 2 }} offset={{ xs: 3, md: 0 }}>
+        <Grid item xs={6} md={2} offset={{ xs: 3, md: 0 }}>
           <Item>1</Item>
         </Grid>
-        <Grid size={{ xs: 4, md: 2 }} offset={{ md: "auto" }}>
+        <Grid item xs={4} md={2} offset={{ md: "auto" }}>
           <Item>2</Item>
         </Grid>
-        <Grid size={{ xs: 4, md: 2 }} offset={{ xs: 4, md: 0 }}>
+        <Grid item xs={4} md={2} offset={{ xs: 4, md: 0 }}>
           <Item>3</Item>
         </Grid>
-        <Grid size={{ xs: "grow", md: 6 }} offset={{ md: 2 }}>
+        <Grid item xs="grow" md={6} offset={{ md: 2 }}>
           <Item>4</Item>
         </Grid>
       </Grid>
